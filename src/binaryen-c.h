@@ -68,64 +68,64 @@ typedef uint32_t BinaryenIndex;
 
 typedef uint32_t BinaryenType;
 
-BinaryenType BinaryenTypeNone(void);
-BinaryenType BinaryenTypeInt32(void);
-BinaryenType BinaryenTypeInt64(void);
-BinaryenType BinaryenTypeFloat32(void);
-BinaryenType BinaryenTypeFloat64(void);
-BinaryenType BinaryenTypeUnreachable(void);
+WASM_API BinaryenType BinaryenTypeNone(void);
+WASM_API BinaryenType BinaryenTypeInt32(void);
+WASM_API BinaryenType BinaryenTypeInt64(void);
+WASM_API BinaryenType BinaryenTypeFloat32(void);
+WASM_API BinaryenType BinaryenTypeFloat64(void);
+WASM_API BinaryenType BinaryenTypeUnreachable(void);
 // Not a real type. Used as the last parameter to BinaryenBlock to let
 // the API figure out the type instead of providing one.
-BinaryenType BinaryenTypeAuto(void);
+WASM_API BinaryenType BinaryenTypeAuto(void);
 
-WASM_DEPRECATED BinaryenType BinaryenNone(void);
-WASM_DEPRECATED BinaryenType BinaryenInt32(void);
-WASM_DEPRECATED BinaryenType BinaryenInt64(void);
-WASM_DEPRECATED BinaryenType BinaryenFloat32(void);
-WASM_DEPRECATED BinaryenType BinaryenFloat64(void);
-WASM_DEPRECATED BinaryenType BinaryenUndefined(void);
+WASM_API WASM_DEPRECATED BinaryenType BinaryenNone(void);
+WASM_API WASM_DEPRECATED BinaryenType BinaryenInt32(void);
+WASM_API WASM_DEPRECATED BinaryenType BinaryenInt64(void);
+WASM_API WASM_DEPRECATED BinaryenType BinaryenFloat32(void);
+WASM_API WASM_DEPRECATED BinaryenType BinaryenFloat64(void);
+WASM_API WASM_DEPRECATED BinaryenType BinaryenUndefined(void);
 
 // Expression ids (call to get the value of each; you can cache them)
 
 typedef uint32_t BinaryenExpressionId;
 
-BinaryenExpressionId BinaryenInvalidId(void);
-BinaryenExpressionId BinaryenBlockId(void);
-BinaryenExpressionId BinaryenIfId(void);
-BinaryenExpressionId BinaryenLoopId(void);
-BinaryenExpressionId BinaryenBreakId(void);
-BinaryenExpressionId BinaryenSwitchId(void);
-BinaryenExpressionId BinaryenCallId(void);
-BinaryenExpressionId BinaryenCallImportId(void);
-BinaryenExpressionId BinaryenCallIndirectId(void);
-BinaryenExpressionId BinaryenGetLocalId(void);
-BinaryenExpressionId BinaryenSetLocalId(void);
-BinaryenExpressionId BinaryenGetGlobalId(void);
-BinaryenExpressionId BinaryenSetGlobalId(void);
-BinaryenExpressionId BinaryenLoadId(void);
-BinaryenExpressionId BinaryenStoreId(void);
-BinaryenExpressionId BinaryenConstId(void);
-BinaryenExpressionId BinaryenUnaryId(void);
-BinaryenExpressionId BinaryenBinaryId(void);
-BinaryenExpressionId BinaryenSelectId(void);
-BinaryenExpressionId BinaryenDropId(void);
-BinaryenExpressionId BinaryenReturnId(void);
-BinaryenExpressionId BinaryenHostId(void);
-BinaryenExpressionId BinaryenNopId(void);
-BinaryenExpressionId BinaryenUnreachableId(void);
-BinaryenExpressionId BinaryenAtomicCmpxchgId(void);
-BinaryenExpressionId BinaryenAtomicRMWId(void);
-BinaryenExpressionId BinaryenAtomicWaitId(void);
-BinaryenExpressionId BinaryenAtomicWakeId(void);
+WASM_API BinaryenExpressionId BinaryenInvalidId(void);
+WASM_API BinaryenExpressionId BinaryenBlockId(void);
+WASM_API BinaryenExpressionId BinaryenIfId(void);
+WASM_API BinaryenExpressionId BinaryenLoopId(void);
+WASM_API BinaryenExpressionId BinaryenBreakId(void);
+WASM_API BinaryenExpressionId BinaryenSwitchId(void);
+WASM_API BinaryenExpressionId BinaryenCallId(void);
+WASM_API BinaryenExpressionId BinaryenCallImportId(void);
+WASM_API BinaryenExpressionId BinaryenCallIndirectId(void);
+WASM_API BinaryenExpressionId BinaryenGetLocalId(void);
+WASM_API BinaryenExpressionId BinaryenSetLocalId(void);
+WASM_API BinaryenExpressionId BinaryenGetGlobalId(void);
+WASM_API BinaryenExpressionId BinaryenSetGlobalId(void);
+WASM_API BinaryenExpressionId BinaryenLoadId(void);
+WASM_API BinaryenExpressionId BinaryenStoreId(void);
+WASM_API BinaryenExpressionId BinaryenConstId(void);
+WASM_API BinaryenExpressionId BinaryenUnaryId(void);
+WASM_API BinaryenExpressionId BinaryenBinaryId(void);
+WASM_API BinaryenExpressionId BinaryenSelectId(void);
+WASM_API BinaryenExpressionId BinaryenDropId(void);
+WASM_API BinaryenExpressionId BinaryenReturnId(void);
+WASM_API BinaryenExpressionId BinaryenHostId(void);
+WASM_API BinaryenExpressionId BinaryenNopId(void);
+WASM_API BinaryenExpressionId BinaryenUnreachableId(void);
+WASM_API BinaryenExpressionId BinaryenAtomicCmpxchgId(void);
+WASM_API BinaryenExpressionId BinaryenAtomicRMWId(void);
+WASM_API BinaryenExpressionId BinaryenAtomicWaitId(void);
+WASM_API BinaryenExpressionId BinaryenAtomicWakeId(void);
 
 // External kinds (call to get the value of each; you can cache them)
 
 typedef uint32_t BinaryenExternalKind;
 
-BinaryenExternalKind BinaryenExternalFunction(void);
-BinaryenExternalKind BinaryenExternalTable(void);
-BinaryenExternalKind BinaryenExternalMemory(void);
-BinaryenExternalKind BinaryenExternalGlobal(void);
+WASM_API BinaryenExternalKind BinaryenExternalFunction(void);
+WASM_API BinaryenExternalKind BinaryenExternalTable(void);
+WASM_API BinaryenExternalKind BinaryenExternalMemory(void);
+WASM_API BinaryenExternalKind BinaryenExternalGlobal(void);
 
 // Modules
 //
@@ -144,8 +144,8 @@ BinaryenExternalKind BinaryenExternalGlobal(void);
 
 typedef void* BinaryenModuleRef;
 
-BinaryenModuleRef BinaryenModuleCreate(void);
-void BinaryenModuleDispose(BinaryenModuleRef module);
+WASM_API BinaryenModuleRef BinaryenModuleCreate(void);
+WASM_API void BinaryenModuleDispose(BinaryenModuleRef module);
 
 // Function types
 
@@ -153,10 +153,11 @@ typedef void* BinaryenFunctionTypeRef;
 
 // Add a new function type. This is thread-safe.
 // Note: name can be NULL, in which case we auto-generate a name
-BinaryenFunctionTypeRef BinaryenAddFunctionType(BinaryenModuleRef module, const char* name, BinaryenType result, BinaryenType* paramTypes, BinaryenIndex numParams);
+WASM_API BinaryenFunctionTypeRef BinaryenAddFunctionType(BinaryenModuleRef module, const char* name, BinaryenType result, BinaryenType* paramTypes, BinaryenIndex numParams);
 
 // Literals. These are passed by value.
 
+// NOTE: takes 16 bytes in memory, with padding between type and value
 struct BinaryenLiteral {
   int32_t type;
   union {
@@ -167,12 +168,12 @@ struct BinaryenLiteral {
   };
 };
 
-struct BinaryenLiteral BinaryenLiteralInt32(int32_t x);
-struct BinaryenLiteral BinaryenLiteralInt64(int64_t x);
-struct BinaryenLiteral BinaryenLiteralFloat32(float x);
-struct BinaryenLiteral BinaryenLiteralFloat64(double x);
-struct BinaryenLiteral BinaryenLiteralFloat32Bits(int32_t x);
-struct BinaryenLiteral BinaryenLiteralFloat64Bits(int64_t x);
+WASM_API struct BinaryenLiteral BinaryenLiteralInt32(int32_t x);
+WASM_API struct BinaryenLiteral BinaryenLiteralInt64(int64_t x);
+WASM_API struct BinaryenLiteral BinaryenLiteralFloat32(float x);
+WASM_API struct BinaryenLiteral BinaryenLiteralFloat64(double x);
+WASM_API struct BinaryenLiteral BinaryenLiteralFloat32Bits(int32_t x);
+WASM_API struct BinaryenLiteral BinaryenLiteralFloat64Bits(int64_t x);
 
 // Expressions
 //
@@ -186,139 +187,139 @@ struct BinaryenLiteral BinaryenLiteralFloat64Bits(int64_t x);
 
 typedef int32_t BinaryenOp;
 
-BinaryenOp BinaryenClzInt32(void);
-BinaryenOp BinaryenCtzInt32(void);
-BinaryenOp BinaryenPopcntInt32(void);
-BinaryenOp BinaryenNegFloat32(void);
-BinaryenOp BinaryenAbsFloat32(void);
-BinaryenOp BinaryenCeilFloat32(void);
-BinaryenOp BinaryenFloorFloat32(void);
-BinaryenOp BinaryenTruncFloat32(void);
-BinaryenOp BinaryenNearestFloat32(void);
-BinaryenOp BinaryenSqrtFloat32(void);
-BinaryenOp BinaryenEqZInt32(void);
-BinaryenOp BinaryenClzInt64(void);
-BinaryenOp BinaryenCtzInt64(void);
-BinaryenOp BinaryenPopcntInt64(void);
-BinaryenOp BinaryenNegFloat64(void);
-BinaryenOp BinaryenAbsFloat64(void);
-BinaryenOp BinaryenCeilFloat64(void);
-BinaryenOp BinaryenFloorFloat64(void);
-BinaryenOp BinaryenTruncFloat64(void);
-BinaryenOp BinaryenNearestFloat64(void);
-BinaryenOp BinaryenSqrtFloat64(void);
-BinaryenOp BinaryenEqZInt64(void);
-BinaryenOp BinaryenExtendSInt32(void);
-BinaryenOp BinaryenExtendUInt32(void);
-BinaryenOp BinaryenWrapInt64(void);
-BinaryenOp BinaryenTruncSFloat32ToInt32(void);
-BinaryenOp BinaryenTruncSFloat32ToInt64(void);
-BinaryenOp BinaryenTruncUFloat32ToInt32(void);
-BinaryenOp BinaryenTruncUFloat32ToInt64(void);
-BinaryenOp BinaryenTruncSFloat64ToInt32(void);
-BinaryenOp BinaryenTruncSFloat64ToInt64(void);
-BinaryenOp BinaryenTruncUFloat64ToInt32(void);
-BinaryenOp BinaryenTruncUFloat64ToInt64(void);
-BinaryenOp BinaryenReinterpretFloat32(void);
-BinaryenOp BinaryenReinterpretFloat64(void);
-BinaryenOp BinaryenConvertSInt32ToFloat32(void);
-BinaryenOp BinaryenConvertSInt32ToFloat64(void);
-BinaryenOp BinaryenConvertUInt32ToFloat32(void);
-BinaryenOp BinaryenConvertUInt32ToFloat64(void);
-BinaryenOp BinaryenConvertSInt64ToFloat32(void);
-BinaryenOp BinaryenConvertSInt64ToFloat64(void);
-BinaryenOp BinaryenConvertUInt64ToFloat32(void);
-BinaryenOp BinaryenConvertUInt64ToFloat64(void);
-BinaryenOp BinaryenPromoteFloat32(void);
-BinaryenOp BinaryenDemoteFloat64(void);
-BinaryenOp BinaryenReinterpretInt32(void);
-BinaryenOp BinaryenReinterpretInt64(void);
-BinaryenOp BinaryenAddInt32(void);
-BinaryenOp BinaryenSubInt32(void);
-BinaryenOp BinaryenMulInt32(void);
-BinaryenOp BinaryenDivSInt32(void);
-BinaryenOp BinaryenDivUInt32(void);
-BinaryenOp BinaryenRemSInt32(void);
-BinaryenOp BinaryenRemUInt32(void);
-BinaryenOp BinaryenAndInt32(void);
-BinaryenOp BinaryenOrInt32(void);
-BinaryenOp BinaryenXorInt32(void);
-BinaryenOp BinaryenShlInt32(void);
-BinaryenOp BinaryenShrUInt32(void);
-BinaryenOp BinaryenShrSInt32(void);
-BinaryenOp BinaryenRotLInt32(void);
-BinaryenOp BinaryenRotRInt32(void);
-BinaryenOp BinaryenEqInt32(void);
-BinaryenOp BinaryenNeInt32(void);
-BinaryenOp BinaryenLtSInt32(void);
-BinaryenOp BinaryenLtUInt32(void);
-BinaryenOp BinaryenLeSInt32(void);
-BinaryenOp BinaryenLeUInt32(void);
-BinaryenOp BinaryenGtSInt32(void);
-BinaryenOp BinaryenGtUInt32(void);
-BinaryenOp BinaryenGeSInt32(void);
-BinaryenOp BinaryenGeUInt32(void);
-BinaryenOp BinaryenAddInt64(void);
-BinaryenOp BinaryenSubInt64(void);
-BinaryenOp BinaryenMulInt64(void);
-BinaryenOp BinaryenDivSInt64(void);
-BinaryenOp BinaryenDivUInt64(void);
-BinaryenOp BinaryenRemSInt64(void);
-BinaryenOp BinaryenRemUInt64(void);
-BinaryenOp BinaryenAndInt64(void);
-BinaryenOp BinaryenOrInt64(void);
-BinaryenOp BinaryenXorInt64(void);
-BinaryenOp BinaryenShlInt64(void);
-BinaryenOp BinaryenShrUInt64(void);
-BinaryenOp BinaryenShrSInt64(void);
-BinaryenOp BinaryenRotLInt64(void);
-BinaryenOp BinaryenRotRInt64(void);
-BinaryenOp BinaryenEqInt64(void);
-BinaryenOp BinaryenNeInt64(void);
-BinaryenOp BinaryenLtSInt64(void);
-BinaryenOp BinaryenLtUInt64(void);
-BinaryenOp BinaryenLeSInt64(void);
-BinaryenOp BinaryenLeUInt64(void);
-BinaryenOp BinaryenGtSInt64(void);
-BinaryenOp BinaryenGtUInt64(void);
-BinaryenOp BinaryenGeSInt64(void);
-BinaryenOp BinaryenGeUInt64(void);
-BinaryenOp BinaryenAddFloat32(void);
-BinaryenOp BinaryenSubFloat32(void);
-BinaryenOp BinaryenMulFloat32(void);
-BinaryenOp BinaryenDivFloat32(void);
-BinaryenOp BinaryenCopySignFloat32(void);
-BinaryenOp BinaryenMinFloat32(void);
-BinaryenOp BinaryenMaxFloat32(void);
-BinaryenOp BinaryenEqFloat32(void);
-BinaryenOp BinaryenNeFloat32(void);
-BinaryenOp BinaryenLtFloat32(void);
-BinaryenOp BinaryenLeFloat32(void);
-BinaryenOp BinaryenGtFloat32(void);
-BinaryenOp BinaryenGeFloat32(void);
-BinaryenOp BinaryenAddFloat64(void);
-BinaryenOp BinaryenSubFloat64(void);
-BinaryenOp BinaryenMulFloat64(void);
-BinaryenOp BinaryenDivFloat64(void);
-BinaryenOp BinaryenCopySignFloat64(void);
-BinaryenOp BinaryenMinFloat64(void);
-BinaryenOp BinaryenMaxFloat64(void);
-BinaryenOp BinaryenEqFloat64(void);
-BinaryenOp BinaryenNeFloat64(void);
-BinaryenOp BinaryenLtFloat64(void);
-BinaryenOp BinaryenLeFloat64(void);
-BinaryenOp BinaryenGtFloat64(void);
-BinaryenOp BinaryenGeFloat64(void);
-BinaryenOp BinaryenPageSize(void);
-BinaryenOp BinaryenCurrentMemory(void);
-BinaryenOp BinaryenGrowMemory(void);
-BinaryenOp BinaryenHasFeature(void);
-BinaryenOp BinaryenAtomicRMWAdd(void);
-BinaryenOp BinaryenAtomicRMWSub(void);
-BinaryenOp BinaryenAtomicRMWAnd(void);
-BinaryenOp BinaryenAtomicRMWOr(void);
-BinaryenOp BinaryenAtomicRMWXor(void);
-BinaryenOp BinaryenAtomicRMWXchg(void);
+WASM_API BinaryenOp BinaryenClzInt32(void);
+WASM_API BinaryenOp BinaryenCtzInt32(void);
+WASM_API BinaryenOp BinaryenPopcntInt32(void);
+WASM_API BinaryenOp BinaryenNegFloat32(void);
+WASM_API BinaryenOp BinaryenAbsFloat32(void);
+WASM_API BinaryenOp BinaryenCeilFloat32(void);
+WASM_API BinaryenOp BinaryenFloorFloat32(void);
+WASM_API BinaryenOp BinaryenTruncFloat32(void);
+WASM_API BinaryenOp BinaryenNearestFloat32(void);
+WASM_API BinaryenOp BinaryenSqrtFloat32(void);
+WASM_API BinaryenOp BinaryenEqZInt32(void);
+WASM_API BinaryenOp BinaryenClzInt64(void);
+WASM_API BinaryenOp BinaryenCtzInt64(void);
+WASM_API BinaryenOp BinaryenPopcntInt64(void);
+WASM_API BinaryenOp BinaryenNegFloat64(void);
+WASM_API BinaryenOp BinaryenAbsFloat64(void);
+WASM_API BinaryenOp BinaryenCeilFloat64(void);
+WASM_API BinaryenOp BinaryenFloorFloat64(void);
+WASM_API BinaryenOp BinaryenTruncFloat64(void);
+WASM_API BinaryenOp BinaryenNearestFloat64(void);
+WASM_API BinaryenOp BinaryenSqrtFloat64(void);
+WASM_API BinaryenOp BinaryenEqZInt64(void);
+WASM_API BinaryenOp BinaryenExtendSInt32(void);
+WASM_API BinaryenOp BinaryenExtendUInt32(void);
+WASM_API BinaryenOp BinaryenWrapInt64(void);
+WASM_API BinaryenOp BinaryenTruncSFloat32ToInt32(void);
+WASM_API BinaryenOp BinaryenTruncSFloat32ToInt64(void);
+WASM_API BinaryenOp BinaryenTruncUFloat32ToInt32(void);
+WASM_API BinaryenOp BinaryenTruncUFloat32ToInt64(void);
+WASM_API BinaryenOp BinaryenTruncSFloat64ToInt32(void);
+WASM_API BinaryenOp BinaryenTruncSFloat64ToInt64(void);
+WASM_API BinaryenOp BinaryenTruncUFloat64ToInt32(void);
+WASM_API BinaryenOp BinaryenTruncUFloat64ToInt64(void);
+WASM_API BinaryenOp BinaryenReinterpretFloat32(void);
+WASM_API BinaryenOp BinaryenReinterpretFloat64(void);
+WASM_API BinaryenOp BinaryenConvertSInt32ToFloat32(void);
+WASM_API BinaryenOp BinaryenConvertSInt32ToFloat64(void);
+WASM_API BinaryenOp BinaryenConvertUInt32ToFloat32(void);
+WASM_API BinaryenOp BinaryenConvertUInt32ToFloat64(void);
+WASM_API BinaryenOp BinaryenConvertSInt64ToFloat32(void);
+WASM_API BinaryenOp BinaryenConvertSInt64ToFloat64(void);
+WASM_API BinaryenOp BinaryenConvertUInt64ToFloat32(void);
+WASM_API BinaryenOp BinaryenConvertUInt64ToFloat64(void);
+WASM_API BinaryenOp BinaryenPromoteFloat32(void);
+WASM_API BinaryenOp BinaryenDemoteFloat64(void);
+WASM_API BinaryenOp BinaryenReinterpretInt32(void);
+WASM_API BinaryenOp BinaryenReinterpretInt64(void);
+WASM_API BinaryenOp BinaryenAddInt32(void);
+WASM_API BinaryenOp BinaryenSubInt32(void);
+WASM_API BinaryenOp BinaryenMulInt32(void);
+WASM_API BinaryenOp BinaryenDivSInt32(void);
+WASM_API BinaryenOp BinaryenDivUInt32(void);
+WASM_API BinaryenOp BinaryenRemSInt32(void);
+WASM_API BinaryenOp BinaryenRemUInt32(void);
+WASM_API BinaryenOp BinaryenAndInt32(void);
+WASM_API BinaryenOp BinaryenOrInt32(void);
+WASM_API BinaryenOp BinaryenXorInt32(void);
+WASM_API BinaryenOp BinaryenShlInt32(void);
+WASM_API BinaryenOp BinaryenShrUInt32(void);
+WASM_API BinaryenOp BinaryenShrSInt32(void);
+WASM_API BinaryenOp BinaryenRotLInt32(void);
+WASM_API BinaryenOp BinaryenRotRInt32(void);
+WASM_API BinaryenOp BinaryenEqInt32(void);
+WASM_API BinaryenOp BinaryenNeInt32(void);
+WASM_API BinaryenOp BinaryenLtSInt32(void);
+WASM_API BinaryenOp BinaryenLtUInt32(void);
+WASM_API BinaryenOp BinaryenLeSInt32(void);
+WASM_API BinaryenOp BinaryenLeUInt32(void);
+WASM_API BinaryenOp BinaryenGtSInt32(void);
+WASM_API BinaryenOp BinaryenGtUInt32(void);
+WASM_API BinaryenOp BinaryenGeSInt32(void);
+WASM_API BinaryenOp BinaryenGeUInt32(void);
+WASM_API BinaryenOp BinaryenAddInt64(void);
+WASM_API BinaryenOp BinaryenSubInt64(void);
+WASM_API BinaryenOp BinaryenMulInt64(void);
+WASM_API BinaryenOp BinaryenDivSInt64(void);
+WASM_API BinaryenOp BinaryenDivUInt64(void);
+WASM_API BinaryenOp BinaryenRemSInt64(void);
+WASM_API BinaryenOp BinaryenRemUInt64(void);
+WASM_API BinaryenOp BinaryenAndInt64(void);
+WASM_API BinaryenOp BinaryenOrInt64(void);
+WASM_API BinaryenOp BinaryenXorInt64(void);
+WASM_API BinaryenOp BinaryenShlInt64(void);
+WASM_API BinaryenOp BinaryenShrUInt64(void);
+WASM_API BinaryenOp BinaryenShrSInt64(void);
+WASM_API BinaryenOp BinaryenRotLInt64(void);
+WASM_API BinaryenOp BinaryenRotRInt64(void);
+WASM_API BinaryenOp BinaryenEqInt64(void);
+WASM_API BinaryenOp BinaryenNeInt64(void);
+WASM_API BinaryenOp BinaryenLtSInt64(void);
+WASM_API BinaryenOp BinaryenLtUInt64(void);
+WASM_API BinaryenOp BinaryenLeSInt64(void);
+WASM_API BinaryenOp BinaryenLeUInt64(void);
+WASM_API BinaryenOp BinaryenGtSInt64(void);
+WASM_API BinaryenOp BinaryenGtUInt64(void);
+WASM_API BinaryenOp BinaryenGeSInt64(void);
+WASM_API BinaryenOp BinaryenGeUInt64(void);
+WASM_API BinaryenOp BinaryenAddFloat32(void);
+WASM_API BinaryenOp BinaryenSubFloat32(void);
+WASM_API BinaryenOp BinaryenMulFloat32(void);
+WASM_API BinaryenOp BinaryenDivFloat32(void);
+WASM_API BinaryenOp BinaryenCopySignFloat32(void);
+WASM_API BinaryenOp BinaryenMinFloat32(void);
+WASM_API BinaryenOp BinaryenMaxFloat32(void);
+WASM_API BinaryenOp BinaryenEqFloat32(void);
+WASM_API BinaryenOp BinaryenNeFloat32(void);
+WASM_API BinaryenOp BinaryenLtFloat32(void);
+WASM_API BinaryenOp BinaryenLeFloat32(void);
+WASM_API BinaryenOp BinaryenGtFloat32(void);
+WASM_API BinaryenOp BinaryenGeFloat32(void);
+WASM_API BinaryenOp BinaryenAddFloat64(void);
+WASM_API BinaryenOp BinaryenSubFloat64(void);
+WASM_API BinaryenOp BinaryenMulFloat64(void);
+WASM_API BinaryenOp BinaryenDivFloat64(void);
+WASM_API BinaryenOp BinaryenCopySignFloat64(void);
+WASM_API BinaryenOp BinaryenMinFloat64(void);
+WASM_API BinaryenOp BinaryenMaxFloat64(void);
+WASM_API BinaryenOp BinaryenEqFloat64(void);
+WASM_API BinaryenOp BinaryenNeFloat64(void);
+WASM_API BinaryenOp BinaryenLtFloat64(void);
+WASM_API BinaryenOp BinaryenLeFloat64(void);
+WASM_API BinaryenOp BinaryenGtFloat64(void);
+WASM_API BinaryenOp BinaryenGeFloat64(void);
+WASM_API BinaryenOp BinaryenPageSize(void);
+WASM_API BinaryenOp BinaryenCurrentMemory(void);
+WASM_API BinaryenOp BinaryenGrowMemory(void);
+WASM_API BinaryenOp BinaryenHasFeature(void);
+WASM_API BinaryenOp BinaryenAtomicRMWAdd(void);
+WASM_API BinaryenOp BinaryenAtomicRMWSub(void);
+WASM_API BinaryenOp BinaryenAtomicRMWAnd(void);
+WASM_API BinaryenOp BinaryenAtomicRMWOr(void);
+WASM_API BinaryenOp BinaryenAtomicRMWXor(void);
+WASM_API BinaryenOp BinaryenAtomicRMWXchg(void);
 
 typedef void* BinaryenExpressionRef;
 
@@ -326,14 +327,14 @@ typedef void* BinaryenExpressionRef;
 //        parameter indicates that the block's type shall be figured out
 //        automatically instead of explicitly providing it. This conforms
 //        to the behavior before the 'type' parameter has been introduced.
-BinaryenExpressionRef BinaryenBlock(BinaryenModuleRef module, const char* name, BinaryenExpressionRef* children, BinaryenIndex numChildren, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenBlock(BinaryenModuleRef module, const char* name, BinaryenExpressionRef* children, BinaryenIndex numChildren, BinaryenType type);
 // If: ifFalse can be NULL
-BinaryenExpressionRef BinaryenIf(BinaryenModuleRef module, BinaryenExpressionRef condition, BinaryenExpressionRef ifTrue, BinaryenExpressionRef ifFalse);
-BinaryenExpressionRef BinaryenLoop(BinaryenModuleRef module, const char* in, BinaryenExpressionRef body);
+WASM_API BinaryenExpressionRef BinaryenIf(BinaryenModuleRef module, BinaryenExpressionRef condition, BinaryenExpressionRef ifTrue, BinaryenExpressionRef ifFalse);
+WASM_API BinaryenExpressionRef BinaryenLoop(BinaryenModuleRef module, const char* in, BinaryenExpressionRef body);
 // Break: value and condition can be NULL
-BinaryenExpressionRef BinaryenBreak(BinaryenModuleRef module, const char* name, BinaryenExpressionRef condition, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenBreak(BinaryenModuleRef module, const char* name, BinaryenExpressionRef condition, BinaryenExpressionRef value);
 // Switch: value can be NULL
-BinaryenExpressionRef BinaryenSwitch(BinaryenModuleRef module, const char **names, BinaryenIndex numNames, const char* defaultName, BinaryenExpressionRef condition, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenSwitch(BinaryenModuleRef module, const char **names, BinaryenIndex numNames, const char* defaultName, BinaryenExpressionRef condition, BinaryenExpressionRef value);
 // Call, CallImport: Note the 'returnType' parameter. You must declare the
 //                   type returned by the function being called, as that
 //                   function might not have been created yet, so we don't
@@ -341,9 +342,9 @@ BinaryenExpressionRef BinaryenSwitch(BinaryenModuleRef module, const char **name
 //                   Also note that WebAssembly does not differentiate
 //                   between Call and CallImport, but Binaryen does, so you
 //                   must use CallImport if calling an import, and vice versa.
-BinaryenExpressionRef BinaryenCall(BinaryenModuleRef module, const char *target, BinaryenExpressionRef* operands, BinaryenIndex numOperands, BinaryenType returnType);
-BinaryenExpressionRef BinaryenCallImport(BinaryenModuleRef module, const char *target, BinaryenExpressionRef* operands, BinaryenIndex numOperands, BinaryenType returnType);
-BinaryenExpressionRef BinaryenCallIndirect(BinaryenModuleRef module, BinaryenExpressionRef target, BinaryenExpressionRef* operands, BinaryenIndex numOperands, const char* type);
+WASM_API BinaryenExpressionRef BinaryenCall(BinaryenModuleRef module, const char *target, BinaryenExpressionRef* operands, BinaryenIndex numOperands, BinaryenType returnType);
+WASM_API BinaryenExpressionRef BinaryenCallImport(BinaryenModuleRef module, const char *target, BinaryenExpressionRef* operands, BinaryenIndex numOperands, BinaryenType returnType);
+WASM_API BinaryenExpressionRef BinaryenCallIndirect(BinaryenModuleRef module, BinaryenExpressionRef target, BinaryenExpressionRef* operands, BinaryenIndex numOperands, const char* type);
 // GetLocal: Note the 'type' parameter. It might seem redundant, since the
 //           local at that index must have a type. However, this API lets you
 //           build code "top-down": create a node, then its parents, and so
@@ -358,224 +359,224 @@ BinaryenExpressionRef BinaryenCallIndirect(BinaryenModuleRef module, BinaryenExp
 //           a var, that is, either a parameter to the function or a variable
 //           declared when you call BinaryenAddFunction. See BinaryenAddFunction
 //           for more details.
-BinaryenExpressionRef BinaryenGetLocal(BinaryenModuleRef module, BinaryenIndex index, BinaryenType type);
-BinaryenExpressionRef BinaryenSetLocal(BinaryenModuleRef module, BinaryenIndex index, BinaryenExpressionRef value);
-BinaryenExpressionRef BinaryenTeeLocal(BinaryenModuleRef module, BinaryenIndex index, BinaryenExpressionRef value);
-BinaryenExpressionRef BinaryenGetGlobal(BinaryenModuleRef module, const char *name, BinaryenType type);
-BinaryenExpressionRef BinaryenSetGlobal(BinaryenModuleRef module, const char *name, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenGetLocal(BinaryenModuleRef module, BinaryenIndex index, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenSetLocal(BinaryenModuleRef module, BinaryenIndex index, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenTeeLocal(BinaryenModuleRef module, BinaryenIndex index, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenGetGlobal(BinaryenModuleRef module, const char *name, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenSetGlobal(BinaryenModuleRef module, const char *name, BinaryenExpressionRef value);
 // Load: align can be 0, in which case it will be the natural alignment (equal to bytes)
-BinaryenExpressionRef BinaryenLoad(BinaryenModuleRef module, uint32_t bytes, int8_t signed_, uint32_t offset, uint32_t align, BinaryenType type, BinaryenExpressionRef ptr);
+WASM_API BinaryenExpressionRef BinaryenLoad(BinaryenModuleRef module, uint32_t bytes, int8_t signed_, uint32_t offset, uint32_t align, BinaryenType type, BinaryenExpressionRef ptr);
 // Store: align can be 0, in which case it will be the natural alignment (equal to bytes)
-BinaryenExpressionRef BinaryenStore(BinaryenModuleRef module, uint32_t bytes, uint32_t offset, uint32_t align, BinaryenExpressionRef ptr, BinaryenExpressionRef value, BinaryenType type);
-BinaryenExpressionRef BinaryenConst(BinaryenModuleRef module, struct BinaryenLiteral value);
-BinaryenExpressionRef BinaryenUnary(BinaryenModuleRef module, BinaryenOp op, BinaryenExpressionRef value);
-BinaryenExpressionRef BinaryenBinary(BinaryenModuleRef module, BinaryenOp op, BinaryenExpressionRef left, BinaryenExpressionRef right);
-BinaryenExpressionRef BinaryenSelect(BinaryenModuleRef module, BinaryenExpressionRef condition, BinaryenExpressionRef ifTrue, BinaryenExpressionRef ifFalse);
-BinaryenExpressionRef BinaryenDrop(BinaryenModuleRef module, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenStore(BinaryenModuleRef module, uint32_t bytes, uint32_t offset, uint32_t align, BinaryenExpressionRef ptr, BinaryenExpressionRef value, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenConst(BinaryenModuleRef module, struct BinaryenLiteral value);
+WASM_API BinaryenExpressionRef BinaryenUnary(BinaryenModuleRef module, BinaryenOp op, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenBinary(BinaryenModuleRef module, BinaryenOp op, BinaryenExpressionRef left, BinaryenExpressionRef right);
+WASM_API BinaryenExpressionRef BinaryenSelect(BinaryenModuleRef module, BinaryenExpressionRef condition, BinaryenExpressionRef ifTrue, BinaryenExpressionRef ifFalse);
+WASM_API BinaryenExpressionRef BinaryenDrop(BinaryenModuleRef module, BinaryenExpressionRef value);
 // Return: value can be NULL
-BinaryenExpressionRef BinaryenReturn(BinaryenModuleRef module, BinaryenExpressionRef value);
+WASM_API BinaryenExpressionRef BinaryenReturn(BinaryenModuleRef module, BinaryenExpressionRef value);
 // Host: name may be NULL
-BinaryenExpressionRef BinaryenHost(BinaryenModuleRef module, BinaryenOp op, const char* name, BinaryenExpressionRef* operands, BinaryenIndex numOperands);
-BinaryenExpressionRef BinaryenNop(BinaryenModuleRef module);
-BinaryenExpressionRef BinaryenUnreachable(BinaryenModuleRef module);
-BinaryenExpressionRef BinaryenAtomicLoad(BinaryenModuleRef module, uint32_t bytes, uint32_t offset, BinaryenType type, BinaryenExpressionRef ptr);
-BinaryenExpressionRef BinaryenAtomicStore(BinaryenModuleRef module, uint32_t bytes, uint32_t offset, BinaryenExpressionRef ptr, BinaryenExpressionRef value, BinaryenType type);
-BinaryenExpressionRef BinaryenAtomicRMW(BinaryenModuleRef module, BinaryenOp op, BinaryenIndex bytes, BinaryenIndex offset, BinaryenExpressionRef ptr, BinaryenExpressionRef value, BinaryenType type);
-BinaryenExpressionRef BinaryenAtomicCmpxchg(BinaryenModuleRef module, BinaryenIndex bytes, BinaryenIndex offset, BinaryenExpressionRef ptr, BinaryenExpressionRef expected, BinaryenExpressionRef replacement, BinaryenType type);
-BinaryenExpressionRef BinaryenAtomicWait(BinaryenModuleRef module, BinaryenExpressionRef ptr, BinaryenExpressionRef expected, BinaryenExpressionRef timeout, BinaryenType type);
-BinaryenExpressionRef BinaryenAtomicWake(BinaryenModuleRef module, BinaryenExpressionRef ptr, BinaryenExpressionRef wakeCount);
+WASM_API BinaryenExpressionRef BinaryenHost(BinaryenModuleRef module, BinaryenOp op, const char* name, BinaryenExpressionRef* operands, BinaryenIndex numOperands);
+WASM_API BinaryenExpressionRef BinaryenNop(BinaryenModuleRef module);
+WASM_API BinaryenExpressionRef BinaryenUnreachable(BinaryenModuleRef module);
+WASM_API BinaryenExpressionRef BinaryenAtomicLoad(BinaryenModuleRef module, uint32_t bytes, uint32_t offset, BinaryenType type, BinaryenExpressionRef ptr);
+WASM_API BinaryenExpressionRef BinaryenAtomicStore(BinaryenModuleRef module, uint32_t bytes, uint32_t offset, BinaryenExpressionRef ptr, BinaryenExpressionRef value, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenAtomicRMW(BinaryenModuleRef module, BinaryenOp op, BinaryenIndex bytes, BinaryenIndex offset, BinaryenExpressionRef ptr, BinaryenExpressionRef value, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenAtomicCmpxchg(BinaryenModuleRef module, BinaryenIndex bytes, BinaryenIndex offset, BinaryenExpressionRef ptr, BinaryenExpressionRef expected, BinaryenExpressionRef replacement, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenAtomicWait(BinaryenModuleRef module, BinaryenExpressionRef ptr, BinaryenExpressionRef expected, BinaryenExpressionRef timeout, BinaryenType type);
+WASM_API BinaryenExpressionRef BinaryenAtomicWake(BinaryenModuleRef module, BinaryenExpressionRef ptr, BinaryenExpressionRef wakeCount);
 
 // Gets the id (kind) of the specified expression.
-BinaryenExpressionId BinaryenExpressionGetId(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionId BinaryenExpressionGetId(BinaryenExpressionRef expr);
 // Gets the type of the specified expression.
-BinaryenType BinaryenExpressionGetType(BinaryenExpressionRef expr);
+WASM_API BinaryenType BinaryenExpressionGetType(BinaryenExpressionRef expr);
 // Prints an expression to stdout. Useful for debugging.
-void BinaryenExpressionPrint(BinaryenExpressionRef expr);
+WASM_API void BinaryenExpressionPrint(BinaryenExpressionRef expr);
 
 // Gets the name of the specified `Block` expression. May be `NULL`.
-const char* BinaryenBlockGetName(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenBlockGetName(BinaryenExpressionRef expr);
 // Gets the number of nested child expressions within the specified `Block` expression.
-BinaryenIndex BinaryenBlockGetNumChildren(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenBlockGetNumChildren(BinaryenExpressionRef expr);
 // Gets the nested child expression at the specified index within the specified `Block` expression.
-BinaryenExpressionRef BinaryenBlockGetChild(BinaryenExpressionRef expr, BinaryenIndex index);
+WASM_API BinaryenExpressionRef BinaryenBlockGetChild(BinaryenExpressionRef expr, BinaryenIndex index);
 
 // Gets the nested condition expression within the specified `If` expression.
-BinaryenExpressionRef BinaryenIfGetCondition(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenIfGetCondition(BinaryenExpressionRef expr);
 // Gets the nested ifTrue expression within the specified `If` expression.
-BinaryenExpressionRef BinaryenIfGetIfTrue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenIfGetIfTrue(BinaryenExpressionRef expr);
 // Gets the nested ifFalse expression within the specified `If` expression.
-BinaryenExpressionRef BinaryenIfGetIfFalse(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenIfGetIfFalse(BinaryenExpressionRef expr);
 
 // Gets the name of the specified `Loop` expression. May be `NULL`.
-const char* BinaryenLoopGetName(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenLoopGetName(BinaryenExpressionRef expr);
 // Gets the nested body expression within the specified `Loop` expression.
-BinaryenExpressionRef BinaryenLoopGetBody(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenLoopGetBody(BinaryenExpressionRef expr);
 
 // Gets the name of the specified `Break` expression. May be `NULL`.
-const char* BinaryenBreakGetName(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenBreakGetName(BinaryenExpressionRef expr);
 // Gets the nested condition expression within the specified `Break` expression. Returns `NULL` if this is a `br` and not a `br_if`.
-BinaryenExpressionRef BinaryenBreakGetCondition(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenBreakGetCondition(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specified `Break` expression. May be `NULL`.
-BinaryenExpressionRef BinaryenBreakGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenBreakGetValue(BinaryenExpressionRef expr);
 
 // Gets the number of names within the specified `Switch` expression.
-BinaryenIndex BinaryenSwitchGetNumNames(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenSwitchGetNumNames(BinaryenExpressionRef expr);
 // Gets the name at the specified index within the specified `Switch` expression.
-const char* BinaryenSwitchGetName(BinaryenExpressionRef expr, BinaryenIndex index);
+WASM_API const char* BinaryenSwitchGetName(BinaryenExpressionRef expr, BinaryenIndex index);
 // Gets the default name of the specified `Switch` expression.
-const char* BinaryenSwitchGetDefaultName(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenSwitchGetDefaultName(BinaryenExpressionRef expr);
 // Gets the nested condition expression within the specified `Switch` expression.
-BinaryenExpressionRef BinaryenSwitchGetCondition(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSwitchGetCondition(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specifiedd `Switch` expression. May be `NULL`.
-BinaryenExpressionRef BinaryenSwitchGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSwitchGetValue(BinaryenExpressionRef expr);
 
 // Gets the name of the target of the specified `Call` expression.
-const char* BinaryenCallGetTarget(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenCallGetTarget(BinaryenExpressionRef expr);
 // Gets the number of nested operand expressions within the specified `Call` expression.
-BinaryenIndex BinaryenCallGetNumOperands(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenCallGetNumOperands(BinaryenExpressionRef expr);
 // Gets the nested operand expression at the specified index within the specified `Call` expression.
-BinaryenExpressionRef BinaryenCallGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
+WASM_API BinaryenExpressionRef BinaryenCallGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
 
 // Gets the name of the target of the specified `CallImport` expression.
-const char* BinaryenCallImportGetTarget(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenCallImportGetTarget(BinaryenExpressionRef expr);
 // Gets the number of nested operand expressions within the specified `CallImport` expression.
-BinaryenIndex BinaryenCallImportGetNumOperands(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenCallImportGetNumOperands(BinaryenExpressionRef expr);
 // Gets the nested operand expression at the specified index within the specified `CallImport` expression.
-BinaryenExpressionRef BinaryenCallImportGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
+WASM_API BinaryenExpressionRef BinaryenCallImportGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
 
 // Gets the nested target expression of the specified `CallIndirect` expression.
-BinaryenExpressionRef BinaryenCallIndirectGetTarget(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenCallIndirectGetTarget(BinaryenExpressionRef expr);
 // Gets the number of nested operand expressions within the specified `CallIndirect` expression.
-BinaryenIndex BinaryenCallIndirectGetNumOperands(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenCallIndirectGetNumOperands(BinaryenExpressionRef expr);
 // Gets the nested operand expression at the specified index within the specified `CallIndirect` expression.
-BinaryenExpressionRef BinaryenCallIndirectGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
+WASM_API BinaryenExpressionRef BinaryenCallIndirectGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
 
 // Gets the index of the specified `GetLocal` expression.
-BinaryenIndex BinaryenGetLocalGetIndex(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenGetLocalGetIndex(BinaryenExpressionRef expr);
 
 // Tests if the specified `SetLocal` expression performs a `tee_local` instead of a `set_local`.
-int BinaryenSetLocalIsTee(BinaryenExpressionRef expr);
+WASM_API int BinaryenSetLocalIsTee(BinaryenExpressionRef expr);
 // Gets the index of the specified `SetLocal` expression.
-BinaryenIndex BinaryenSetLocalGetIndex(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenSetLocalGetIndex(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specified `SetLocal` expression.
-BinaryenExpressionRef BinaryenSetLocalGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSetLocalGetValue(BinaryenExpressionRef expr);
 
 // Gets the name of the specified `GetGlobal` expression.
-const char* BinaryenGetGlobalGetName(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenGetGlobalGetName(BinaryenExpressionRef expr);
 
 // Gets the name of the specified `SetGlobal` expression.
-const char* BinaryenSetGlobalGetName(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenSetGlobalGetName(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specified `SetLocal` expression.
-BinaryenExpressionRef BinaryenSetGlobalGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSetGlobalGetValue(BinaryenExpressionRef expr);
 
 // Gets the operator of the specified `Host` expression.
-BinaryenOp BinaryenHostGetOp(BinaryenExpressionRef expr);
+WASM_API BinaryenOp BinaryenHostGetOp(BinaryenExpressionRef expr);
 // Gets the name operand of the specified `Host` expression. May be `NULL`.
-const char* BinaryenHostGetNameOperand(BinaryenExpressionRef expr);
+WASM_API const char* BinaryenHostGetNameOperand(BinaryenExpressionRef expr);
 // Gets the number of nested operand expressions within the specified `Host` expression.
-BinaryenIndex BinaryenHostGetNumOperands(BinaryenExpressionRef expr);
+WASM_API BinaryenIndex BinaryenHostGetNumOperands(BinaryenExpressionRef expr);
 // Gets the nested operand expression at the specified index within the specified `Host` expression.
-BinaryenExpressionRef BinaryenHostGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
+WASM_API BinaryenExpressionRef BinaryenHostGetOperand(BinaryenExpressionRef expr, BinaryenIndex index);
 
 // Tests if the specified `Load` expression is atomic.
-int BinaryenLoadIsAtomic(BinaryenExpressionRef expr);
+WASM_API int BinaryenLoadIsAtomic(BinaryenExpressionRef expr);
 // Tests if the specified `Load` expression is signed.
-int BinaryenLoadIsSigned(BinaryenExpressionRef expr);
+WASM_API int BinaryenLoadIsSigned(BinaryenExpressionRef expr);
 // Gets the offset of the specified `Load` expression.
-uint32_t BinaryenLoadGetOffset(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenLoadGetOffset(BinaryenExpressionRef expr);
 // Gets the byte size of the specified `Load` expression.
-uint32_t BinaryenLoadGetBytes(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenLoadGetBytes(BinaryenExpressionRef expr);
 // Gets the alignment of the specified `Load` expression.
-uint32_t BinaryenLoadGetAlign(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenLoadGetAlign(BinaryenExpressionRef expr);
 // Gets the nested pointer expression within the specified `Load` expression.
-BinaryenExpressionRef BinaryenLoadGetPtr(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenLoadGetPtr(BinaryenExpressionRef expr);
 
 // Tests if the specified `Store` expression is atomic.
-int BinaryenStoreIsAtomic(BinaryenExpressionRef expr);
+WASM_API int BinaryenStoreIsAtomic(BinaryenExpressionRef expr);
 // Gets the byte size of the specified `Store` expression.
-uint32_t BinaryenStoreGetBytes(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenStoreGetBytes(BinaryenExpressionRef expr);
 // Gets the offset of the specified store expression.
-uint32_t BinaryenStoreGetOffset(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenStoreGetOffset(BinaryenExpressionRef expr);
 // Gets the alignment of the specified `Store` expression.
-uint32_t BinaryenStoreGetAlign(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenStoreGetAlign(BinaryenExpressionRef expr);
 // Gets the nested pointer expression within the specified `Store` expression.
-BinaryenExpressionRef BinaryenStoreGetPtr(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenStoreGetPtr(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specified `Store` expression.
-BinaryenExpressionRef BinaryenStoreGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenStoreGetValue(BinaryenExpressionRef expr);
 
 // Gets the 32-bit integer value of the specified `Const` expression.
-int32_t BinaryenConstGetValueI32(BinaryenExpressionRef expr);
+WASM_API int32_t BinaryenConstGetValueI32(BinaryenExpressionRef expr);
 // Gets the 64-bit integer value of the specified `Const` expression.
-int64_t BinaryenConstGetValueI64(BinaryenExpressionRef expr);
+WASM_API int64_t BinaryenConstGetValueI64(BinaryenExpressionRef expr);
 // Gets the low 32-bits of a 64-bit integer value of the specified `Const` expression. Useful where I64 returning exports are illegal, i.e. binaryen.js.
-int32_t BinaryenConstGetValueI64Low(BinaryenExpressionRef expr);
+WASM_API int32_t BinaryenConstGetValueI64Low(BinaryenExpressionRef expr);
 // Gets the high 32-bits of a 64-bit integer value of the specified `Const` expression. Useful where I64 returning exports are illegal, i.e. binaryen.js.
-int32_t BinaryenConstGetValueI64High(BinaryenExpressionRef expr);
+WASM_API int32_t BinaryenConstGetValueI64High(BinaryenExpressionRef expr);
 // Gets the 32-bit float value of the specified `Const` expression.
-float BinaryenConstGetValueF32(BinaryenExpressionRef expr);
+WASM_API float BinaryenConstGetValueF32(BinaryenExpressionRef expr);
 // Gets the 64-bit float value of the specified `Const` expression.
-double BinaryenConstGetValueF64(BinaryenExpressionRef expr);
+WASM_API double BinaryenConstGetValueF64(BinaryenExpressionRef expr);
 
 // Gets the operator of the specified `Unary` expression.
-BinaryenOp BinaryenUnaryGetOp(BinaryenExpressionRef expr);
+WASM_API BinaryenOp BinaryenUnaryGetOp(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specified `Unary` expression.
-BinaryenExpressionRef BinaryenUnaryGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenUnaryGetValue(BinaryenExpressionRef expr);
 
 // Gets the operator of the specified `Binary` expression.
-BinaryenOp BinaryenBinaryGetOp(BinaryenExpressionRef expr);
+WASM_API BinaryenOp BinaryenBinaryGetOp(BinaryenExpressionRef expr);
 // Gets the nested left expression within the specified `Binary` expression.
-BinaryenExpressionRef BinaryenBinaryGetLeft(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenBinaryGetLeft(BinaryenExpressionRef expr);
 // Gets the nested right expression within the specified `Binary` expression.
-BinaryenExpressionRef BinaryenBinaryGetRight(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenBinaryGetRight(BinaryenExpressionRef expr);
 
 // Gets the nested ifTrue expression within the specified `Select` expression.
-BinaryenExpressionRef BinaryenSelectGetIfTrue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSelectGetIfTrue(BinaryenExpressionRef expr);
 // Gets the nested ifFalse expression within the specified `Select` expression.
-BinaryenExpressionRef BinaryenSelectGetIfFalse(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSelectGetIfFalse(BinaryenExpressionRef expr);
 // Gets the nested condition expression within the specified `Select` expression.
-BinaryenExpressionRef BinaryenSelectGetCondition(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenSelectGetCondition(BinaryenExpressionRef expr);
 
 // Gets the nested value expression within the specified `Drop` expression.
-BinaryenExpressionRef BinaryenDropGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenDropGetValue(BinaryenExpressionRef expr);
 
 // Gets the nested value expression within the specified `Return` expression.
-BinaryenExpressionRef BinaryenReturnGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenReturnGetValue(BinaryenExpressionRef expr);
 
 // Gets the operator of the specified `AtomicRMW` expression.
-BinaryenOp BinaryenAtomicRMWGetOp(BinaryenExpressionRef expr);
+WASM_API BinaryenOp BinaryenAtomicRMWGetOp(BinaryenExpressionRef expr);
 // Gets the byte size of the specified `AtomicRMW` expression.
-uint32_t BinaryenAtomicRMWGetBytes(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenAtomicRMWGetBytes(BinaryenExpressionRef expr);
 // Gets the offset of the specified `AtomicRMW` expression.
-uint32_t BinaryenAtomicRMWGetOffset(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenAtomicRMWGetOffset(BinaryenExpressionRef expr);
 // Gets the nested pointer expression within the specified `AtomicRMW` expression.
-BinaryenExpressionRef BinaryenAtomicRMWGetPtr(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicRMWGetPtr(BinaryenExpressionRef expr);
 // Gets the nested value expression within the specified `AtomicRMW` expression.
-BinaryenExpressionRef BinaryenAtomicRMWGetValue(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicRMWGetValue(BinaryenExpressionRef expr);
 
 // Gets the byte size of the specified `AtomicCmpxchg` expression.
-uint32_t BinaryenAtomicCmpxchgGetBytes(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenAtomicCmpxchgGetBytes(BinaryenExpressionRef expr);
 // Gets the offset of the specified `AtomicCmpxchg` expression.
-uint32_t BinaryenAtomicCmpxchgGetOffset(BinaryenExpressionRef expr);
+WASM_API uint32_t BinaryenAtomicCmpxchgGetOffset(BinaryenExpressionRef expr);
 // Gets the nested pointer expression within the specified `AtomicCmpxchg` expression.
-BinaryenExpressionRef BinaryenAtomicCmpxchgGetPtr(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicCmpxchgGetPtr(BinaryenExpressionRef expr);
 // Gets the nested expected value expression within the specified `AtomicCmpxchg` expression.
-BinaryenExpressionRef BinaryenAtomicCmpxchgGetExpected(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicCmpxchgGetExpected(BinaryenExpressionRef expr);
 // Gets the nested replacement value expression within the specified `AtomicCmpxchg` expression.
-BinaryenExpressionRef BinaryenAtomicCmpxchgGetReplacement(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicCmpxchgGetReplacement(BinaryenExpressionRef expr);
 
 // Gets the nested pointer expression within the specified `AtomicWait` expression.
-BinaryenExpressionRef BinaryenAtomicWaitGetPtr(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicWaitGetPtr(BinaryenExpressionRef expr);
 // Gets the nested expected value expression within the specified `AtomicWait` expression.
-BinaryenExpressionRef BinaryenAtomicWaitGetExpected(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicWaitGetExpected(BinaryenExpressionRef expr);
 // Gets the nested timeout expression within the specified `AtomicWait` expression.
-BinaryenExpressionRef BinaryenAtomicWaitGetTimeout(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicWaitGetTimeout(BinaryenExpressionRef expr);
 // Gets the expected type of the specified `AtomicWait` expression.
-BinaryenType BinaryenAtomicWaitGetExpectedType(BinaryenExpressionRef expr);
+WASM_API BinaryenType BinaryenAtomicWaitGetExpectedType(BinaryenExpressionRef expr);
 
 // Gets the nested pointer expression within the specified `AtomicWake` expression.
-BinaryenExpressionRef BinaryenAtomicWakeGetPtr(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicWakeGetPtr(BinaryenExpressionRef expr);
 // Gets the nested wake count expression within the specified `AtomicWake` expression.
-BinaryenExpressionRef BinaryenAtomicWakeGetWakeCount(BinaryenExpressionRef expr);
+WASM_API BinaryenExpressionRef BinaryenAtomicWakeGetWakeCount(BinaryenExpressionRef expr);
 
 // Functions
 
@@ -589,113 +590,113 @@ typedef void* BinaryenFunctionRef;
 //            and then vars, so if you have one param it will be at index
 //            0 (and written $0), and if you also have 2 vars they will be
 //            at indexes 1 and 2, etc., that is, they share an index space.
-BinaryenFunctionRef BinaryenAddFunction(BinaryenModuleRef module, const char* name, BinaryenFunctionTypeRef type, BinaryenType* varTypes, BinaryenIndex numVarTypes, BinaryenExpressionRef body);
+WASM_API BinaryenFunctionRef BinaryenAddFunction(BinaryenModuleRef module, const char* name, BinaryenFunctionTypeRef type, BinaryenType* varTypes, BinaryenIndex numVarTypes, BinaryenExpressionRef body);
 
 // Gets a function reference by name.
-BinaryenFunctionRef BinaryenGetFunction(BinaryenModuleRef module, const char* name);
+WASM_API BinaryenFunctionRef BinaryenGetFunction(BinaryenModuleRef module, const char* name);
 
 // Removes a function by name.
-void BinaryenRemoveFunction(BinaryenModuleRef module, const char* name);
+WASM_API void BinaryenRemoveFunction(BinaryenModuleRef module, const char* name);
 
 // Imports
 
 typedef void* BinaryenImportRef;
 
-WASM_DEPRECATED BinaryenImportRef BinaryenAddImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName, BinaryenFunctionTypeRef type);
-BinaryenImportRef BinaryenAddFunctionImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName, BinaryenFunctionTypeRef functionType);
-BinaryenImportRef BinaryenAddTableImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName);
-BinaryenImportRef BinaryenAddMemoryImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName);
-BinaryenImportRef BinaryenAddGlobalImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName, BinaryenType globalType);
-void BinaryenRemoveImport(BinaryenModuleRef module, const char* internalName);
+WASM_API WASM_DEPRECATED BinaryenImportRef BinaryenAddImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName, BinaryenFunctionTypeRef type);
+WASM_API BinaryenImportRef BinaryenAddFunctionImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName, BinaryenFunctionTypeRef functionType);
+WASM_API BinaryenImportRef BinaryenAddTableImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName);
+WASM_API BinaryenImportRef BinaryenAddMemoryImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName);
+WASM_API BinaryenImportRef BinaryenAddGlobalImport(BinaryenModuleRef module, const char* internalName, const char* externalModuleName, const char *externalBaseName, BinaryenType globalType);
+WASM_API void BinaryenRemoveImport(BinaryenModuleRef module, const char* internalName);
 
 // Exports
 
 typedef void* BinaryenExportRef;
 
-WASM_DEPRECATED BinaryenExportRef BinaryenAddExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
-BinaryenExportRef BinaryenAddFunctionExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
-BinaryenExportRef BinaryenAddTableExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
-BinaryenExportRef BinaryenAddMemoryExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
-BinaryenExportRef BinaryenAddGlobalExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
-void BinaryenRemoveExport(BinaryenModuleRef module, const char* externalName);
+WASM_API WASM_DEPRECATED BinaryenExportRef BinaryenAddExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
+WASM_API BinaryenExportRef BinaryenAddFunctionExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
+WASM_API BinaryenExportRef BinaryenAddTableExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
+WASM_API BinaryenExportRef BinaryenAddMemoryExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
+WASM_API BinaryenExportRef BinaryenAddGlobalExport(BinaryenModuleRef module, const char* internalName, const char* externalName);
+WASM_API void BinaryenRemoveExport(BinaryenModuleRef module, const char* externalName);
 
 // Globals
 
 typedef void* BinaryenGlobalRef;
 
-BinaryenGlobalRef BinaryenAddGlobal(BinaryenModuleRef module, const char* name, BinaryenType type, int8_t mutable_, BinaryenExpressionRef init);
+WASM_API BinaryenGlobalRef BinaryenAddGlobal(BinaryenModuleRef module, const char* name, BinaryenType type, int8_t mutable_, BinaryenExpressionRef init);
 
 // Function table. One per module
 
-void BinaryenSetFunctionTable(BinaryenModuleRef module, BinaryenFunctionRef* funcs, BinaryenIndex numFuncs);
+WASM_API void BinaryenSetFunctionTable(BinaryenModuleRef module, BinaryenFunctionRef* funcs, BinaryenIndex numFuncs);
 
 // Memory. One per module
 
 // Each segment has data in segments, a start offset in segmentOffsets, and a size in segmentSizes.
 // exportName can be NULL
-void BinaryenSetMemory(BinaryenModuleRef module, BinaryenIndex initial, BinaryenIndex maximum, const char* exportName, const char **segments, BinaryenExpressionRef* segmentOffsets, BinaryenIndex* segmentSizes, BinaryenIndex numSegments);
+WASM_API void BinaryenSetMemory(BinaryenModuleRef module, BinaryenIndex initial, BinaryenIndex maximum, const char* exportName, const char **segments, BinaryenExpressionRef* segmentOffsets, BinaryenIndex* segmentSizes, BinaryenIndex numSegments);
 
 // Start function. One per module
 
-void BinaryenSetStart(BinaryenModuleRef module, BinaryenFunctionRef start);
+WASM_API void BinaryenSetStart(BinaryenModuleRef module, BinaryenFunctionRef start);
 
 //
 // ========== Module Operations ==========
 //
 
 // Parse a module in s-expression text format
-BinaryenModuleRef BinaryenModuleParse(const char* text);
+WASM_API BinaryenModuleRef BinaryenModuleParse(const char* text);
 
 // Print a module to stdout in s-expression text format. Useful for debugging.
-void BinaryenModulePrint(BinaryenModuleRef module);
+WASM_API void BinaryenModulePrint(BinaryenModuleRef module);
 
 // Print a module to stdout in asm.js syntax.
-void BinaryenModulePrintAsmjs(BinaryenModuleRef module);
+WASM_API void BinaryenModulePrintAsmjs(BinaryenModuleRef module);
 
 // Validate a module, showing errors on problems.
 //  @return 0 if an error occurred, 1 if validated succesfully
-int BinaryenModuleValidate(BinaryenModuleRef module);
+WASM_API int BinaryenModuleValidate(BinaryenModuleRef module);
 
 // Runs the standard optimization passes on the module. Uses the currently set
 // global optimize and shrink level.
-void BinaryenModuleOptimize(BinaryenModuleRef module);
+WASM_API void BinaryenModuleOptimize(BinaryenModuleRef module);
 
 // Gets the currently set optimize level. Applies to all modules, globally.
 // 0, 1, 2 correspond to -O0, -O1, -O2 (default), etc.
-int BinaryenGetOptimizeLevel();
+WASM_API int BinaryenGetOptimizeLevel();
 
 // Sets the optimization level to use. Applies to all modules, globally.
 // 0, 1, 2 correspond to -O0, -O1, -O2 (default), etc.
-void BinaryenSetOptimizeLevel(int level);
+WASM_API void BinaryenSetOptimizeLevel(int level);
 
 // Gets the currently set shrink level. Applies to all modules, globally.
 // 0, 1, 2 correspond to -O0, -Os (default), -Oz.
-int BinaryenGetShrinkLevel();
+WASM_API int BinaryenGetShrinkLevel();
 
 // Sets the shrink level to use. Applies to all modules, globally.
 // 0, 1, 2 correspond to -O0, -Os (default), -Oz.
-void BinaryenSetShrinkLevel(int level);
+WASM_API void BinaryenSetShrinkLevel(int level);
 
 // Gets whether generating debug information is currently enabled or not.
 // Applies to all modules, globally.
-int BinaryenGetDebugInfo();
+WASM_API int BinaryenGetDebugInfo();
 
 // Enables or disables debug information in emitted binaries.
 // Applies to all modules, globally.
-void BinaryenSetDebugInfo(int on);
+WASM_API void BinaryenSetDebugInfo(int on);
 
 // Runs the specified passes on the module. Uses the currently set global
 // optimize and shrink level.
-void BinaryenModuleRunPasses(BinaryenModuleRef module, const char **passes, BinaryenIndex numPasses);
+WASM_API void BinaryenModuleRunPasses(BinaryenModuleRef module, const char **passes, BinaryenIndex numPasses);
 
 // Auto-generate drop() operations where needed. This lets you generate code without
 // worrying about where they are needed. (It is more efficient to do it yourself,
 // but simpler to use autodrop).
-void BinaryenModuleAutoDrop(BinaryenModuleRef module);
+WASM_API void BinaryenModuleAutoDrop(BinaryenModuleRef module);
 
 // Serialize a module into binary form. Uses the currently set global debugInfo option.
 // @return how many bytes were written. This will be less than or equal to outputSize
-size_t BinaryenModuleWrite(BinaryenModuleRef module, char* output, size_t outputSize);
+WASM_API size_t BinaryenModuleWrite(BinaryenModuleRef module, char* output, size_t outputSize);
 
 typedef struct BinaryenBufferSizes {
   size_t outputBytes;
@@ -705,7 +706,7 @@ typedef struct BinaryenBufferSizes {
 // Serialize a module into binary form including its source map. Uses the currently set
 // global debugInfo option.
 // @returns how many bytes were written. This will be less than or equal to outputSize
-BinaryenBufferSizes BinaryenModuleWriteWithSourceMap(BinaryenModuleRef module, const char* url, char* output, size_t outputSize, char* sourceMap, size_t sourceMapSize);
+WASM_API BinaryenBufferSizes BinaryenModuleWriteWithSourceMap(BinaryenModuleRef module, const char* url, char* output, size_t outputSize, char* sourceMap, size_t sourceMapSize);
 
 // Result structure of BinaryenModuleAllocateAndWrite. Contained buffers have been allocated
 // using malloc() and the user is expected to free() them manually once not needed anymore.
@@ -719,95 +720,95 @@ typedef struct BinaryenModuleAllocateAndWriteResult {
 // sourceMapUrl has been specified. Uses the currently set global debugInfo option.
 // Differs from BinaryenModuleWrite in that it implicitly allocates appropriate buffers
 // using malloc(), and expects the user to free() them manually once not needed anymore.
-BinaryenModuleAllocateAndWriteResult BinaryenModuleAllocateAndWrite(BinaryenModuleRef module, const char* sourceMapUrl);
+WASM_API BinaryenModuleAllocateAndWriteResult BinaryenModuleAllocateAndWrite(BinaryenModuleRef module, const char* sourceMapUrl);
 
 // Deserialize a module from binary form.
-BinaryenModuleRef BinaryenModuleRead(char* input, size_t inputSize);
+WASM_API BinaryenModuleRef BinaryenModuleRead(char* input, size_t inputSize);
 
 // Execute a module in the Binaryen interpreter. This will create an instance of
 // the module, run it in the interpreter - which means running the start method -
 // and then destroying the instance.
-void BinaryenModuleInterpret(BinaryenModuleRef module);
+WASM_API void BinaryenModuleInterpret(BinaryenModuleRef module);
 
 // Adds a debug info file name to the module and returns its index.
-BinaryenIndex BinaryenModuleAddDebugInfoFileName(BinaryenModuleRef module, const char* filename);
+WASM_API BinaryenIndex BinaryenModuleAddDebugInfoFileName(BinaryenModuleRef module, const char* filename);
 
 // Gets the name of the debug info file at the specified index. Returns `NULL` if it
 // does not exist.
-const char* BinaryenModuleGetDebugInfoFileName(BinaryenModuleRef module, BinaryenIndex index);
+WASM_API const char* BinaryenModuleGetDebugInfoFileName(BinaryenModuleRef module, BinaryenIndex index);
 
 //
 // ======== FunctionType Operations ========
 //
 
 // Gets the name of the specified `FunctionType`.
-const char* BinaryenFunctionTypeGetName(BinaryenFunctionTypeRef ftype);
+WASM_API const char* BinaryenFunctionTypeGetName(BinaryenFunctionTypeRef ftype);
 // Gets the number of parameters of the specified `FunctionType`.
-BinaryenIndex BinaryenFunctionTypeGetNumParams(BinaryenFunctionTypeRef ftype);
+WASM_API BinaryenIndex BinaryenFunctionTypeGetNumParams(BinaryenFunctionTypeRef ftype);
 // Gets the type of the parameter at the specified index of the specified `FunctionType`.
-BinaryenType BinaryenFunctionTypeGetParam(BinaryenFunctionTypeRef ftype, BinaryenIndex index);
+WASM_API BinaryenType BinaryenFunctionTypeGetParam(BinaryenFunctionTypeRef ftype, BinaryenIndex index);
 // Gets the result type of the specified `FunctionType`.
-BinaryenType BinaryenFunctionTypeGetResult(BinaryenFunctionTypeRef ftype);
+WASM_API BinaryenType BinaryenFunctionTypeGetResult(BinaryenFunctionTypeRef ftype);
 
 //
 // ========== Function Operations ==========
 //
 
 // Gets the name of the specified `Function`.
-const char* BinaryenFunctionGetName(BinaryenFunctionRef func);
+WASM_API const char* BinaryenFunctionGetName(BinaryenFunctionRef func);
 // Gets the name of the `FunctionType` associated with the specified `Function`. May be `NULL` if the signature is implicit.
-const char* BinaryenFunctionGetType(BinaryenFunctionRef func);
+WASM_API const char* BinaryenFunctionGetType(BinaryenFunctionRef func);
 // Gets the number of parameters of the specified `Function`.
-BinaryenIndex BinaryenFunctionGetNumParams(BinaryenFunctionRef func);
+WASM_API BinaryenIndex BinaryenFunctionGetNumParams(BinaryenFunctionRef func);
 // Gets the type of the parameter at the specified index of the specified `Function`.
-BinaryenType BinaryenFunctionGetParam(BinaryenFunctionRef func, BinaryenIndex index);
+WASM_API BinaryenType BinaryenFunctionGetParam(BinaryenFunctionRef func, BinaryenIndex index);
 // Gets the result type of the specified `Function`.
-BinaryenType BinaryenFunctionGetResult(BinaryenFunctionRef func);
+WASM_API BinaryenType BinaryenFunctionGetResult(BinaryenFunctionRef func);
 // Gets the number of additional locals within the specified `Function`.
-BinaryenIndex BinaryenFunctionGetNumVars(BinaryenFunctionRef func);
+WASM_API BinaryenIndex BinaryenFunctionGetNumVars(BinaryenFunctionRef func);
 // Gets the type of the additional local at the specified index within the specified `Function`.
-BinaryenType BinaryenFunctionGetVar(BinaryenFunctionRef func, BinaryenIndex index);
+WASM_API BinaryenType BinaryenFunctionGetVar(BinaryenFunctionRef func, BinaryenIndex index);
 // Gets the body of the specified `Function`.
-BinaryenExpressionRef BinaryenFunctionGetBody(BinaryenFunctionRef func);
+WASM_API BinaryenExpressionRef BinaryenFunctionGetBody(BinaryenFunctionRef func);
 
 // Runs the standard optimization passes on the function. Uses the currently set
 // global optimize and shrink level.
-void BinaryenFunctionOptimize(BinaryenFunctionRef func, BinaryenModuleRef module);
+WASM_API void BinaryenFunctionOptimize(BinaryenFunctionRef func, BinaryenModuleRef module);
 
 // Runs the specified passes on the function. Uses the currently set global
 // optimize and shrink level.
-void BinaryenFunctionRunPasses(BinaryenFunctionRef func, BinaryenModuleRef module, const char **passes, BinaryenIndex numPasses);
+WASM_API void BinaryenFunctionRunPasses(BinaryenFunctionRef func, BinaryenModuleRef module, const char **passes, BinaryenIndex numPasses);
 
 // Sets the debug location of the specified `Expression` within the specified `Function`.
-void BinaryenFunctionSetDebugLocation(BinaryenFunctionRef func, BinaryenExpressionRef expr, BinaryenIndex fileIndex, BinaryenIndex lineNumber, BinaryenIndex columnNumber);
+WASM_API void BinaryenFunctionSetDebugLocation(BinaryenFunctionRef func, BinaryenExpressionRef expr, BinaryenIndex fileIndex, BinaryenIndex lineNumber, BinaryenIndex columnNumber);
 
 //
 // ========== Import Operations ==========
 //
 
 // Gets the external kind of the specified import.
-BinaryenExternalKind BinaryenImportGetKind(BinaryenImportRef import);
+WASM_API BinaryenExternalKind BinaryenImportGetKind(BinaryenImportRef import);
 // Gets the external module name of the specified import.
-const char* BinaryenImportGetModule(BinaryenImportRef import);
+WASM_API const char* BinaryenImportGetModule(BinaryenImportRef import);
 // Gets the external base name of the specified import.
-const char* BinaryenImportGetBase(BinaryenImportRef import);
+WASM_API const char* BinaryenImportGetBase(BinaryenImportRef import);
 // Gets the internal name of the specified import.
-const char* BinaryenImportGetName(BinaryenImportRef import);
+WASM_API const char* BinaryenImportGetName(BinaryenImportRef import);
 // Gets the type of the imported global, if referencing a `Global`.
-BinaryenType BinaryenImportGetGlobalType(BinaryenImportRef import);
+WASM_API BinaryenType BinaryenImportGetGlobalType(BinaryenImportRef import);
 // Gets the name of the function type of the imported function, if referencing a `Function`.
-const char* BinaryenImportGetFunctionType(BinaryenImportRef import);
+WASM_API const char* BinaryenImportGetFunctionType(BinaryenImportRef import);
 
 //
 // ========== Export Operations ==========
 //
 
 // Gets the external kind of the specified export.
-BinaryenExternalKind BinaryenExportGetKind(BinaryenExportRef export_);
+WASM_API BinaryenExternalKind BinaryenExportGetKind(BinaryenExportRef export_);
 // Gets the external name of the specified export.
-const char* BinaryenExportGetName(BinaryenExportRef export_);
+WASM_API const char* BinaryenExportGetName(BinaryenExportRef export_);
 // Gets the internal name of the specified export.
-const char* BinaryenExportGetValue(BinaryenExportRef export_);
+WASM_API const char* BinaryenExportGetValue(BinaryenExportRef export_);
 
 //
 // ========== CFG / Relooper ==========
@@ -821,20 +822,20 @@ typedef void* RelooperRef;
 typedef void* RelooperBlockRef;
 
 // Create a relooper instance
-RelooperRef RelooperCreate(void);
+WASM_API RelooperRef RelooperCreate(void);
 
 // Create a basic block that ends with nothing, or with some simple branching
-RelooperBlockRef RelooperAddBlock(RelooperRef relooper, BinaryenExpressionRef code);
+WASM_API RelooperBlockRef RelooperAddBlock(RelooperRef relooper, BinaryenExpressionRef code);
 
 // Create a branch to another basic block
 // The branch can have code on it, that is executed as the branch happens. this is useful for phis. otherwise, code can be NULL
-void RelooperAddBranch(RelooperBlockRef from, RelooperBlockRef to, BinaryenExpressionRef condition, BinaryenExpressionRef code);
+WASM_API void RelooperAddBranch(RelooperBlockRef from, RelooperBlockRef to, BinaryenExpressionRef condition, BinaryenExpressionRef code);
 
 // Create a basic block that ends a switch on a condition
-RelooperBlockRef RelooperAddBlockWithSwitch(RelooperRef relooper, BinaryenExpressionRef code, BinaryenExpressionRef condition);
+WASM_API RelooperBlockRef RelooperAddBlockWithSwitch(RelooperRef relooper, BinaryenExpressionRef code, BinaryenExpressionRef condition);
 
 // Create a switch-style branch to another basic block. The block's switch table will have these indexes going to that target
-void RelooperAddBranchForSwitch(RelooperBlockRef from, RelooperBlockRef to, BinaryenIndex* indexes, BinaryenIndex numIndexes, BinaryenExpressionRef code);
+WASM_API void RelooperAddBranchForSwitch(RelooperBlockRef from, RelooperBlockRef to, BinaryenIndex* indexes, BinaryenIndex numIndexes, BinaryenExpressionRef code);
 
 // Generate structed wasm control flow from the CFG of blocks and branches that were created
 // on this relooper instance. This returns the rendered output, and also disposes of the
@@ -842,7 +843,7 @@ void RelooperAddBranchForSwitch(RelooperBlockRef from, RelooperBlockRef to, Bina
 //   @param labelHelper To render irreducible control flow, we may need a helper variable to
 //                      guide us to the right target label. This value should be an index of
 //                      an i32 local variable that is free for us to use.
-BinaryenExpressionRef RelooperRenderAndDispose(RelooperRef relooper, RelooperBlockRef entry, BinaryenIndex labelHelper, BinaryenModuleRef module);
+WASM_API BinaryenExpressionRef RelooperRenderAndDispose(RelooperRef relooper, RelooperBlockRef entry, BinaryenIndex labelHelper, BinaryenModuleRef module);
 
 //
 // ========= Other APIs =========
@@ -855,7 +856,7 @@ BinaryenExpressionRef RelooperRenderAndDispose(RelooperRef relooper, RelooperBlo
 // and when calling it to turn it off, the ending of the program is printed, giving
 // you the full compilable testcase.
 // TODO: compile-time option to enable/disable this feature entirely at build time?
-void BinaryenSetAPITracing(int on);
+WASM_API void BinaryenSetAPITracing(int on);
 
 //
 // ========= Utilities =========
@@ -866,7 +867,7 @@ void BinaryenSetAPITracing(int on);
 // of parameters as BinaryenAddFunctionType but instead of adding a new function
 // signature, it returns a pointer to the existing signature or NULL if there is no
 // such signature yet.
-BinaryenFunctionTypeRef BinaryenGetFunctionTypeBySignature(BinaryenModuleRef module, BinaryenType result, BinaryenType* paramTypes, BinaryenIndex numParams);
+WASM_API BinaryenFunctionTypeRef BinaryenGetFunctionTypeBySignature(BinaryenModuleRef module, BinaryenType result, BinaryenType* paramTypes, BinaryenIndex numParams);
 
 #ifdef __cplusplus
 } // extern "C"
